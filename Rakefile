@@ -5,11 +5,11 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "my_emma"
-    gem.summary = %Q{TODO}
-    gem.email = "wes@hashrocket.com"
+    gem.summary = %Q{Ruby wrapper for the MyEmma Remote Signup API}
+    gem.email = "dev@hashrocket.com"
     gem.homepage = "http://github.com/hashrocket/my_emma"
-    gem.authors = ["Wes Gibbs"]
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.authors = ["Jim Remsik", "Sandro Turriate"]
+    gem.add_dependency('httparty', '>= 0.4.3')
   end
 
 rescue LoadError
