@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "lib/my_emma.rb",
      "lib/my_emma/response.rb",
      "lib/rfc822.rb",
+     "my_emma.gemspec",
      "spec/my_emma/response_spec.rb",
      "spec/my_emma_spec.rb",
      "spec/spec_helper.rb"
@@ -44,11 +45,11 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<httparty>, [">= 0.4.3"])
+      s.add_runtime_dependency(%q<jnunemaker-httparty>, [">= 0.4.3"])
     else
-      s.add_dependency(%q<httparty>, [">= 0.4.3"])
+      s.add_dependency(%q<jnunemaker-httparty>, [">= 0.4.3"])
     end
   else
-    s.add_dependency(%q<httparty>, [">= 0.4.3"])
+    s.add_dependency(%q<jnunemaker-httparty>, [">= 0.4.3"])
   end
 end
