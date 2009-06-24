@@ -31,6 +31,10 @@ h2. Usage
 
 >> MyEmma.signup("joe@example.com", {:emma_member_name_first => "Joe", :emma_member_name_last => "Piscopo"})
 => #<MyEmma::Response:0x11809b0 @response="1", @code=1>
+
+# Assign member to group with an ID of 12345 
+>> MyEmma.signup("groupie@example.com", "group[12345]" => 1)
+=> <MyEmma::Response:0x113a6f4 @response="1", @code=1>
 </code></pre>
 
 h2. Copyright
