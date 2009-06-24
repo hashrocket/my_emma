@@ -1,0 +1,7 @@
+h1. my_emma
+
+Description goes here.
+
+h2. Copyright
+
+Copyright (c) 2009 Hashrocket. See LICENSE for details.
