@@ -1,7 +1,38 @@
 h1. my_emma
 
-Description goes here.
+p. Post requests to MyEmma.com's Remote Signup API.
+
+h2. Installation
+
+<pre>sudo gem install hashrocket-my_emma</pre>
+
+h2. Usage
+
+<pre><code>
+>> MyEmma.credentials = {
+     :emma_account_id => '9999',
+     :signup_post => '8888',
+     :username => 'user',
+     :password => 'pass'
+   }
+>> response = MyEmma.signup("test@example.com")
+=> #<MyEmma::Response:0x11ba840 @response="1", @code=1>
+>> response.success?
+=> true
+>> response.failed?
+=> false
+>> response.added_member?
+=> true
+
+>> response = MyEmma.signup("test@example.com")
+=> #<MyEmma::Response:0x11ba840 @response="2", @code=2>
+>> response.updated_member?
+=> true
+
+>> MyEmma.signup("joe@example.com", {:emma_member_name_first => "Joe", :emma_member_name_last => "Piscopo"})
+=> #<MyEmma::Response:0x11809b0 @response="1", @code=1>
+</code></pre>
 
 h2. Copyright
 
-Copyright (c) 2009 Hashrocket. See LICENSE for details.
+Copyright (c) 2009 Hashrocket. See MIT_LICENSE for details.
