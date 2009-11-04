@@ -20,7 +20,7 @@ describe MyEmma do
     end
 
     it "posts the email to the endpoint" do
-      MyEmma.should_receive(:post).with(anything, :query => hash_including(:emma_member_email => 'test@example.com'))
+      MyEmma.should_receive(:post).with(anything, :body => hash_including(:emma_member_email => 'test@example.com'))
       MyEmma.signup('test@example.com')
     end
 
@@ -41,13 +41,13 @@ describe MyEmma do
 
     it "adds credentials to the post request" do
       MyEmma.stub!(:credentials => {:username => 'someuser'})
-      MyEmma.should_receive(:post).with(anything, :query => hash_including(:username => 'someuser'))
+      MyEmma.should_receive(:post).with(anything, :body => hash_including(:username => 'someuser'))
       MyEmma.signup('email@example.com')
     end
 
-    it "adds additional parameters to the query" do
+    it "adds additional parameters to the body" do
       MyEmma.stub!(:credentials => {:username => 'someuser'})
-      MyEmma.should_receive(:post).with(anything, :query => hash_including(:username => 'someuser', :first_name => "John", :last_name => "Smith", :emma_member_email => 'email@example.com'))
+      MyEmma.should_receive(:post).with(anything, :body => hash_including(:username => 'someuser', :first_name => "John", :last_name => "Smith", :emma_member_email => 'email@example.com'))
       MyEmma.signup('email@example.com', :first_name => "John", :last_name => "Smith")
     end
   end
