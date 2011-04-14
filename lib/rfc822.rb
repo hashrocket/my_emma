@@ -1,7 +1,7 @@
 #
 # RFC822 Email Address Regex
 # --------------------------
-# 
+#
 # Originally written by Cal Henderson
 # c.f. http://iamcal.com/publish/articles/php/parsing_email/
 #
@@ -9,7 +9,7 @@
 #
 # Licensed under a Creative Commons Attribution-ShareAlike 2.5 License
 # http://creativecommons.org/licenses/by-sa/2.5/
-# ro@me.com =~ RFC822::EmailAddress
+#
 module RFC822
   EmailAddress = begin
     qtext = '[^\\x0d\\x22\\x5c\\x80-\\xff]'
@@ -25,6 +25,6 @@ module RFC822
     domain = "#{sub_domain}(?:\\x2e#{sub_domain})*"
     local_part = "#{word}(?:\\x2e#{word})*"
     addr_spec = "#{local_part}\\x40#{domain}"
-    pattern = /\A#{addr_spec}\z/
+    pattern = Regexp.new("\A#{addr_spec}\z", nil, 'n')
   end
 end
